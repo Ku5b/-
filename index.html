@@ -4,50 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة شهادات قوات الأمن الخاصة</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* إعدادات عامة وتفعيل خط Cairo */
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #f5f5f5; /* لون خلفية خفيف جداً */
+            color: #1a1a1a;
             margin: 0; padding: 0; text-align: center;
         }
+
+        /* الجزء العلوي: أسود ملكي */
         header {
-            background: linear-gradient(rgba(11, 32, 16, 0.9), rgba(11, 32, 16, 0.9)), url('https://via.placeholder.com/1200x300'); /* يمكنك وضع رابط صورة عسكرية هنا */
-            background-size: cover;
-            padding: 60px 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); /* أسود ملكي متدرج */
+            padding: 80px 20px;
             border-bottom: 5px solid #c5a059;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-in-out; /* تأثير دخول */
         }
-        h1 { color: #c5a059; font-size: 2.5rem; margin-bottom: 10px; }
+        h1 { color: #c5a059; font-size: 3rem; margin: 0 0 15px 0; font-weight: 700; }
+        header p { color: #fff; font-size: 1.3rem; }
+
+        /* الجزء السفلي: أبيض شفاف */
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 50px 10% ;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 70px 10%;
+            background-color: #fff; /* خلفية بيضاء */
+            animation: fadeInUp 1s ease-in-out 0.5s both; /* تأثير دخول بتأخير */
         }
         .card {
-            background: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            transition: 0.4s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            background: rgba(255, 255, 255, 0.9); /* أبيض شفاف */
+            border: 1px solid rgba(0,0,0,0.1); /* حدود خفيفة جداً */
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05); /* ظل ناعم */
+            transition: all 0.4s ease; /* تأثيرات عند التفاعل */
+            cursor: pointer;
         }
-        .card:hover { border-color: #c5a059; transform: translateY(-10px); }
-        .card h2 { color: #fff; font-size: 1.8rem; margin-bottom: 15px; }
+        /* تأثير عند تحريك الماوس على الكرت */
+        .card:hover { 
+            border-color: #c5a059; 
+            transform: translateY(-10px); 
+            box-shadow: 0 12px 30px rgba(197, 160, 89, 0.2); 
+        }
+        .card h2 { color: #1a1a1a; font-size: 2.2rem; margin: 0 0 20px 0; font-weight: 700; border-bottom: 3px solid #c5a059; padding-bottom: 10px; display: inline-block;}
+        .card p { color: #555; font-size: 1.1rem; line-height: 1.6; }
         .btn {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
+            margin-top: 25px;
+            padding: 15px 35px;
             background-color: #c5a059;
-            color: #000;
+            color: #1a1a1a;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: 0.3s;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
         }
         .btn:hover { background-color: #a38446; }
-        footer { padding: 30px; background: #0b2010; color: #777; font-size: 0.9rem; }
+
+        footer { padding: 40px; background: #0b2010; color: #fff; font-size: 1rem; border-top: 5px solid #c5a059; }
+
+        /* تأثيرات حركة الدخول */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -58,19 +86,19 @@
 </header>
 
 <div class="container">
-    <div class="card">
+    <div class="card" onclick="location.href='basic.html'">
         <h2>🎖️ الفرد الأساسي</h2>
         <p>اللبنة الأولى في بناء العسكري المحترف داخل القوات.</p>
         <a href="basic.html" class="btn">التفاصيل والمميزات</a>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="location.href='raids.html'">
         <h2>💥 وحدة المداهمات</h2>
         <p>دورة تخصصية في اقتحام وتطهير المواقع عالية الخطورة.</p>
         <a href="raids.html" class="btn">التفاصيل والمميزات</a>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="location.href='protection.html'">
         <h2>🛡️ أمن وحماية</h2>
         <p>تأهيل المنسوبين لحماية الشخصيات والمنشآت الحيوية.</p>
         <a href="protection.html" class="btn">التفاصيل والمميزات</a>
