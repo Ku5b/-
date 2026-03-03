@@ -8,119 +8,124 @@
     <style>
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: #f5f5f5;
+            background-color: #fcfcfc;
             color: #1a1a1a;
             margin: 0; padding: 0; text-align: center;
             overflow-x: hidden;
         }
 
-        /* الهيدر مع الشعار الشفاف في الخلفية */
         header {
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%), 
-                        url('https://i.ibb.co/3s3f2zG/logo.png') no-repeat center center;
-            background-size: contain;
-            padding: 100px 20px;
-            border-bottom: 5px solid #c5a059;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            background-color: #0a0a0a;
+            padding: 80px 20px;
+            border-bottom: 4px solid #c5a059;
             position: relative;
+            overflow: hidden;
+        }
+
+        /* وضع الشعار الطويل خلف النص بشفافية */
+        .header-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.15;
+            width: 280px;
+            pointer-events: none;
+            z-index: 0;
         }
 
         h1 { 
             font-family: 'Amiri', serif;
             color: #c5a059; 
-            font-size: 3.5rem; 
-            margin: 0 0 15px 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: clamp(2rem, 8vw, 3.5rem); 
+            margin: 0;
+            position: relative;
+            z-index: 1;
         }
 
-        header p { color: #fff; font-size: 1.3rem; opacity: 0.9; }
+        header p { 
+            color: #fff; 
+            font-size: 1.1rem; 
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
 
         .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            padding: 70px 10%;
-            background-color: #fff; /* الجزء السفلي أبيض */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            padding: 70px 5%;
         }
 
-        /* إعدادات الكروت قبل ظهورها (مخفية) */
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            border: 1px solid rgba(0,0,0,0.1);
+            background: #ffffff;
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-            transition: all 0.8s ease-out;
-            cursor: pointer;
-            opacity: 0; /* مخفي */
-            transform: translateY(50px); /* نازل للأسفل */
+            width: 90%;
+            max-width: 550px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
         }
 
-        /* الحالة عند التمرير للأسفل (تظهر الكروت) */
-        .card.reveal {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .card:hover { 
-            border-color: #c5a059; 
-            transform: scale(1.03) !important; 
-            box-shadow: 0 12px 30px rgba(197, 160, 89, 0.2); 
-        }
+        .card.reveal { opacity: 1; transform: translateY(0); }
 
         .card h2 { 
-            color: #1a1a1a; 
             font-size: 2.2rem; 
-            margin: 0 0 20px 0; 
-            font-weight: 700; 
+            margin: 0 0 15px 0; 
             border-bottom: 3px solid #c5a059; 
-            padding-bottom: 10px; 
             display: inline-block;
+            padding-bottom: 5px;
         }
 
-        .card p { color: #555; font-size: 1.1rem; line-height: 1.6; }
-        
         .btn {
             display: inline-block;
             margin-top: 25px;
-            padding: 12px 35px;
+            padding: 15px 45px;
             background-color: #c5a059;
-            color: #1a1a1a;
+            color: #000;
             text-decoration: none;
             font-weight: 700;
             border-radius: 10px;
+            transition: 0.3s;
         }
+        .btn:hover { background-color: #a38446; transform: scale(1.05); }
 
-        /* التذييل باللون الأسود الملكي */
         footer { 
-            padding: 40px; 
-            background: #000000; 
+            background: #000; 
             color: #fff; 
-            border-top: 5px solid #c5a059; 
+            padding: 40px; 
+            border-top: 4px solid #c5a059;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
 <header>
+    <img src="1200px-Special_Security_Forces_Saudi_Arabia.svg.png" class="header-logo" alt="Logo">
     <h1>منصة شهادات قوات الأمن الخاصة</h1>
     <p>بوابة التحقق الرسمية للمنسوبين والخريجين</p>
 </header>
 
 <div class="container">
-    <div class="card" onclick="location.href='basic.html'">
+    <div class="card">
         <h2>الفرد الأساسي</h2>
         <p>اللبنة الأولى في بناء العسكري المحترف داخل القوات.</p>
         <a href="basic.html" class="btn">التفاصيل والمميزات</a>
     </div>
 
-    <div class="card" onclick="location.href='raids.html'">
+    <div class="card">
         <h2>وحدة المداهمات</h2>
         <p>دورة تخصصية في اقتحام وتطهير المواقع عالية الخطورة.</p>
         <a href="raids.html" class="btn">التفاصيل والمميزات</a>
     </div>
 
-    <div class="card" onclick="location.href='protection.html'">
+    <div class="card">
         <h2>أمن وحماية</h2>
         <p>تأهيل المنسوبين لحماية الشخصيات والمنشآت الحيوية.</p>
         <a href="protection.html" class="btn">التفاصيل والمميزات</a>
@@ -132,16 +137,13 @@
 </footer>
 
 <script>
-    // سكربت الظهور عند النزول للأسفل
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal');
-            }
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('reveal');
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll('.card').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
 </script>
 
 </body>
