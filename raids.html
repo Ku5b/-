@@ -2,27 +2,42 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>تفاصيل شهادة المداهمات</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل شهادة المداهمات - قوات الأمن الخاصة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #1a1a1a; color: #fff; text-align: center; padding: 50px; }
-        .info-box { background: #262626; border-right: 5px solid #d9534f; padding: 20px; max-width: 600px; margin: auto; text-align: right; border-radius: 10px; }
-        h1 { color: #d9534f; }
-        .back-btn { display: inline-block; margin-top: 30px; color: #d9534f; text-decoration: none; border: 1px solid #d9534f; padding: 10px 20px; border-radius: 5px; }
+        body { font-family: 'Cairo', sans-serif; background-color: #f5f5f5; color: #1a1a1a; margin: 0; padding: 0; text-align: center; }
+        header { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); padding: 60px 20px; border-bottom: 5px solid #d9534f; box-shadow: 0 5px 20px rgba(0,0,0,0.3); animation: fadeInDown 0.8s ease-out;}
+        h1 { color: #d9534f; font-size: 2.8rem; margin: 0; font-weight: 700; }
+        .content { padding: 80px 10%; background-color: #fff; animation: fadeInUp 0.8s ease-out 0.3s both; }
+        .info-box { background: rgba(255, 255, 255, 0.95); border-right: 8px solid #d9534f; padding: 50px; max-width: 900px; margin: auto; text-align: right; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
+        .info-box:hover { transform: scale(1.02); }
+        h3 { color: #1a1a1a; font-size: 1.8rem; margin-top: 0; margin-bottom: 15px; font-weight: 600; }
+        p, li { color: #444; font-size: 1.2rem; line-height: 1.8; }
+        ul { margin-top: 0; }
+        .back-btn { display: inline-block; margin-top: 40px; color: #d9534f; text-decoration: none; border: 2px solid #d9534f; padding: 15px 30px; border-radius: 10px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease;}
+        .back-btn:hover { background-color: #d9534f; color: #1a1a1a; }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
-    <h1>💥 شهادة دورة المداهمات</h1>
-    <div class="info-box">
-        <h3>وصف الشهادة:</h3>
-        <p>دورة تخصصية متقدمة لتدريب الأفراد على اقتحام الأماكن المغلقة، التعامل مع الرهائن، واستخدام الأسلحة التكتيكية السريعة.</p>
-        <h3>المميزات:</h3>
-        <ul>
-            <li>الحصول على لقب "عنصر اقتحام".</li>
-            <li>صلاحية قيادة الفرق الميدانية أثناء العمليات.</li>
-            <li>زيادة في بدلات الخطر والمهام التكتيكية.</li>
-        </ul>
+    <header>
+        <h1>💥 شهادة دورة المداهمات</h1>
+    </header>
+    <div class="content">
+        <div class="info-box">
+            <h3>وصف الشهادة:</h3>
+            <p>دورة تخصصية متقدمة ونوعية تهدف إلى تدريب وتأهيل الأفراد على كيفية تنفيذ عمليات الاقتحام والمداهمة للأماكن المغلقة وعالية الخطورة. تشمل التدريبات محاكاة واقعية لإنقاذ الرهائن، والتعامل الاحترافي مع العناصر الإرهابية والمجرمين الخطرين، واستخدام الأسلحة التكتيكية السريعة الدقيقة.</p>
+            <h3>المميزات:</h3>
+            <ul>
+                <li>الحصول رسميًا على لقب "عنصر اقتحام" المتخصص.</li>
+                <li>صلاحية قيادة الفرق الميدانية وتوجيه العمليات أثناء تنفيذ المداهمات.</li>
+                <li>الأولوية والترشيح الدائم لقيادة مهام التدخل السريع التكتيكية.</li>
+                <li>زيادة ملحوظة في البدلات التخصصية المرتبطة بالخطر والعمليات الخاصة.</li>
+            </ul>
+        </div>
+        <a href="index.html" class="back-btn">العودة للرئيسية</a>
     </div>
-    <a href="index.html" class="back-btn">العودة للرئيسية</a>
 </body>
 </html>
